@@ -1,0 +1,33 @@
+Cfancy is a casual reamke of the original C language.
+
+Here I'll describe is basis. The description here implies you understand 'C' language.
+
+First there won't be statements or macros as we already know them.
+
+Declarations won't allow multiple identifiers to be described (by using the comma operator). They can exist in expressions and will
+evaluate to the declared object. Initalization won't be defined as a term in this language. You can of-course still assign values.
+If the declarator have no name then it defines an unnamed object. Another thing in this language is the fact that declaration and 
+definition in it will mean the same thing (you will need to alert the compiler of some variable existence only once - then it's 
+his own responsibilty to recognize it's instances - above or below the declaration).
+
+Some examples which reflect the changes:
+
+Before:
+
+int a = 2, **b = NULL;
+
+Now:
+
+int a = 2, int **b = NULL
+
+Although on first look the difference is not big - actually is. The first thing you see is a declaration and initalization of 2
+variables. The second however is a declaration of variable 'a' which is assigned 2 (so the variable 'a') then the comma operator
+then another declaration of another variable 'b' which is then assigned NULL. They are all normal expressions.
+
+You could for example write something like this:
+
+int **ppa = &int *pa
+
+Which means that a variable 'pa' of type pointer to 'int' is created which then is taken the address of and stored to another
+just created variable named 'ppa'. Isn't that kinda sick?
+
